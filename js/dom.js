@@ -45,7 +45,7 @@ let singleCommentCard = (obj, padding) => `
         <a href="#">Likes</a><span style="color: red"> ${
 					obj.Likes === 0 ? "" : obj.Likes
 				}</span>
-        <a href="#">Comment</a><span style="color: red"> ${
+        <a href="#">Reply</a><span style="color: red"> ${
 					obj.childComments.length === 0 ? "" : obj.childComments.length
 				}</span>
         <a href="#"> Edit</a>
@@ -129,7 +129,7 @@ let deleteComment = (allComments, newCommentId) => {
 };
 // Event delegation for "comment", "edit comment", "like", "update comment" click and "add new child" comment in existing comments
 commentList.addEventListener("click", e => {
-	if (e.target.innerText === "Comment") {
+	if (e.target.innerText === "Reply") {
 		const parentId = !e.target.parentNode.getAttribute("data-parentId")
 			? e.target.parentNode.getAttribute("data-parentId")
 			: e.target.parentNode.getAttribute("id");
